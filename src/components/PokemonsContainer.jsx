@@ -5,7 +5,7 @@ import useSearchPokemonPage from '../hooks/useSearchPokemonPage';
 
 function PokemonContainer() {
 
-    const [query, setQuery] = useState('')
+    const [query, setQuery] = useState('a')
     const [pageNumber, setPageNumber] = useState(1)
     const {pokemons, hasMore, loading} = useSearchPokemonPage(query, pageNumber)
 

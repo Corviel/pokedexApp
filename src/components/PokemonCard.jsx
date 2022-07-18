@@ -30,8 +30,8 @@ const PokemonCard = React.forwardRef(({pokemon}, ref) => {
     const navigate = useNavigate()
     const types = pokemon.types.map(type => `${type.type.name}`)
     const typesFormatted = types.join(" ")
-    const style = (types.length > 1 ? {background: `linear-gradient(180deg, transparent 65%, ${colors.neutralWhite} 35%), linear-gradient(90deg, ${colors[types[0]]} 50%, ${colors[types[1]]} 50%)`} 
-                    :   {background: `linear-gradient(180deg, ${colors[types[0]]} 65%, ${colors.neutralWhite} 35%)`})
+    const style = (types.length > 1 ? {background: `linear-gradient(180deg, transparent 65%, ${colors.neutralWhite} 35%), linear-gradient(90deg, transparent 50%, ${colors[types[1]]} 50%), linear-gradient(90deg, ${colors[types[0]]} 50%, transparent 50%)`}
+                    :   {background: `linear-gradient(180deg, ${colors[types[0]]} 65%, ${colors.neutralWhite} 35%)`}) /* trans, cor, bg */
 
 
 
@@ -76,14 +76,14 @@ const PokemonCard = React.forwardRef(({pokemon}, ref) => {
         }
     }
     return (
-        <div className={"pokemon-card " + typesFormatted} ref={ref} style={style}>
+        <div className={"pokemon-card"} ref={ref} style={style}>
             <div className="pokemon-image" ref={imageRef}>
                <img src={image} alt={pokemon.name} />
             </div>
             <div className="pokemon-text">
                <h2><span>#{pokemon.id} {pokemon.name}</span></h2>
                <div className="types">
-                {pokemon.types.map(type => <p>{type.type.name}</p>)}
+                {pokemon.types.map(type => <p>{ type.type.name}</p>)}
                </div>
             </div>
         </div>

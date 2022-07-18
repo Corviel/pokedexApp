@@ -11,3 +11,27 @@
    gap: 1rem;
    position: absolute;
 }
+
+@media screen and (max-width: 1700px) {
+   .pokemon-container {
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   @media all and (max-width: 1300px) {
+      .pokemon-container {
+         grid-template-columns: repeat(3, 1fr);
+      }
+   }
+
+   @media all and (max-width: 900px) {
+      .pokemon-container {
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+
+   @media all and (max-width: 650px) {
+      .pokemon-container {
+         grid-template-columns: repeat(1, 1fr);
+      }
+   }
+}
